@@ -25,9 +25,9 @@ public:
 	int get_damage();
 	int get_defence();
 
-	void set_name(string);
-	void set_health(int);
-	void set_damage(int);
-	void set_defence(int);
+	Character& set_name(string);
+	Character& set_health(int);
+	Character& set_damage(int);
+	Character& set_defence(int);
 };
 

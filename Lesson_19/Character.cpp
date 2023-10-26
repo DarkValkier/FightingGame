@@ -23,20 +23,24 @@ int Character::get_defence() {
 	return defence;
 }
 
-void Character::set_name(string _name) {
+Character& Character::set_name(string _name) {
 	name = _name;
+	return *this;
 }
 
-void Character::set_health(int _health) {
+Character& Character::set_health(int _health) {
 	health = _health;
+	return *this;
 }
 
-void Character::set_damage(int _damage) {
+Character& Character::set_damage(int _damage) {
 	damage = _damage;
+	return *this;
 }
 
-void Character::set_defence(int _defence) {
+Character& Character::set_defence(int _defence) {
 	defence = _defence;
+	return *this;
 }
 
 void Character::print_stats() {

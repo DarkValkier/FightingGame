@@ -9,9 +9,11 @@ int main()
 
     Character player1("Вася");
     player1.print_stats();
+    player1.set_health(50);
     cout << endl;
 
     Character player2("Петя");
+    player2.set_health(150).set_damage(4).set_defence(1);
     player2.print_stats();
     cout << endl;
 
