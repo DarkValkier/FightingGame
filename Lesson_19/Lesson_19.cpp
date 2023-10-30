@@ -1,43 +1,35 @@
 #include <iostream>
 #include <Windows.h>
 #include "Character.h"
+#include "Arena.h"
 
 int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
+    Arena arena;
+
     Character player1("Вася");
-    player1.print_stats();
-    player1.set_health(50);
-    cout << endl;
+    player1.set_health(50).set_speed(5);
 
     Character player2("Петя");
-    player2.set_health(150).set_damage(4).set_defence(1);
-    player2.print_stats();
-    cout << endl;
+    player2.set_health(160).set_damage(4)
+        .set_defence(1).set_speed(15);
 
-    while (player1.alive() && player2.alive())
-    {
-        int player1_damage = player1.attack(player2);
-        int player2_damage = player2.attack(player1);
+    Character player3("Анатолий");
 
-        cout << player1.get_name() << " атаковал " << player2.get_name() << " и нанёс " << player1_damage << " урона" << endl;
-        cout << player2.get_name() << " атаковал " << player1.get_name() << " и нанёс " << player2_damage << " урона" << endl;
-        cout << endl;
-    }
-    
-    player1.print_stats();
-    cout << endl;
-    player2.print_stats();
-    cout << endl;
+    arena.add_character(player1);
+    arena.add_character(player2);
+    arena.add_character(player3);
 
-    /*
-        1. Поменять вывод "Игрок 1" и "Игрок 2" на имена этих игроков
-        2. В классе Character сделать конструктор, принимающий имя игрока
-        3. Сделать так, чтобы персонажи дрались до тех пор, пока у одного
-           из них не закончится здоровье.
-    
-    */
+    cout << "Arena fighters:" << endl;
+    arena.print_characters();
 
+    cout << " == FIGHT ==" << endl;
+    arena.fight();
+    cout << " == END OF FIGHT ==" << endl;
+
+    cout << "Arena fighters:" << endl;
+    arena.print_characters();
 }

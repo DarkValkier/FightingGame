@@ -5,6 +5,13 @@ using namespace std;
 
 Character::Character() {}
 Character::Character(string _name):name(_name) {}
+Character::Character(const Character& _source) {
+	name = _source.name;
+	health = _source.health;
+	damage = _source.damage;
+	defence = _source.defence;
+	speed = _source.speed;
+}
 Character::~Character() {}
 
 string Character::get_name() {
@@ -21,6 +28,10 @@ int Character::get_damage() {
 
 int Character::get_defence() {
 	return defence;
+}
+
+int Character::get_speed() {
+	return speed;
 }
 
 Character& Character::set_name(string _name) {
@@ -43,11 +54,17 @@ Character& Character::set_defence(int _defence) {
 	return *this;
 }
 
+Character& Character::set_speed(int _speed) {
+	speed = _speed;
+	return *this;
+}
+
 void Character::print_stats() {
 	cout << " - " << name << endl;
 	cout << " Здоровье: " << health << endl;
 	cout << " Урон: " << damage << endl;
 	cout << " Защита: " << defence << endl;
+	cout << " Скорость: " << speed << endl;
 }
 
 int Character::take_damage(int _damage) {
