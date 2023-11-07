@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -13,7 +14,7 @@ class Character
 
 public:
 	Character();
-	Character(string);
+	Character(string, int = 100, int = 5, int = 0, int = 10);
 	Character(const Character&);
 	~Character();
 

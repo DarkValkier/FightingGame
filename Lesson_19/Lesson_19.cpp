@@ -10,7 +10,7 @@ int main()
 
     Arena arena;
 
-    Character player1("Вася");
+    Character player1("Вася", 50, 5, 0, 5);
     player1.set_health(50).set_speed(5);
 
     Character player2("Петя");
@@ -19,9 +19,15 @@ int main()
 
     Character player3("Анатолий");
 
-    arena.add_character(player1);
+    Arena arena2;
+    arena2 += Character("Евгений");
+    arena2 += Character("Александр");
+    arena2 += Character("Вадим");
+
+    arena += player1;
     arena.add_character(player2);
     arena.add_character(player3);
+    arena += arena2;
 
     cout << "Arena fighters:" << endl;
     arena.print_characters();

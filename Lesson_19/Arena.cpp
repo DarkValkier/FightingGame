@@ -58,15 +58,30 @@ unsigned int Arena::characters_alive() {
 	return result;
 }
 
-void Arena::sort_by_speed() {
+void Arena::sort_by_speed(bool inverted) {
 	bool changed = true;
 	while (changed)
 	{
 		changed = false;
 		for (int i = 0; i < characters_count - 1; i++)
-			if (characters[i].get_speed() < characters[i + 1].get_speed()) {
+			if (
+				((characters[i].get_speed() < characters[i + 1].get_speed()) && !inverted)
+				||
+				((characters[i].get_speed() > characters[i + 1].get_speed()) && inverted)
+				) {
 				swap(characters[i], characters[i + 1]);
 				changed = true;
 			}
 	}
+}
+
+Arena& Arena::operator+=(Character _character) {
+	add_character(_character);
+	return *this;
+}
+
+Arena& Arena::operator+=(Arena& _source) {
+	for (int i = 0; i < _source.characters_count; i++)
+		add_character(_source.characters[i]);
+	return *this;
 }
