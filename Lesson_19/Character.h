@@ -17,21 +17,21 @@ public:
 	Character(const Character&);
 	~Character();
 
-	void print_stats();
-	int attack(Character&);
-	int take_damage(int);
-	bool alive();
+	virtual void print_stats();
+	virtual int attack(Character&);
+	virtual int take_damage(int);
+	virtual bool alive();
 
-	string get_name();
-	int get_health();
-	int get_damage();
-	int get_defence();
-	int get_speed();
+	virtual string get_name();
+	virtual int get_health();
+	virtual int get_damage();
+	virtual int get_defence();
+	virtual int get_speed();
 
-	Character& set_name(string);
-	Character& set_health(int);
-	Character& set_damage(int);
-	Character& set_defence(int);
-	Character& set_speed(int);
+	virtual Character* set_name(string);
+	virtual Character* set_health(int);
+	virtual Character* set_damage(int);
+	virtual Character* set_defence(int);
+	virtual Character* set_speed(int);
 };
 

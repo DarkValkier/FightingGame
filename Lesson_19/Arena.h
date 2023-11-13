@@ -7,7 +7,7 @@ using namespace std;
 
 class Arena
 {
-	Character* characters = nullptr;
+	Character** characters = nullptr;
 	unsigned int characters_count = 0;
 
 public:
@@ -16,7 +16,7 @@ public:
 	~Arena();
 
 	void print_characters();
-	void add_character(const Character&);
+	void add_character(Character*);
 	void fight();
 	unsigned int characters_alive();
 	void sort_by_speed();
