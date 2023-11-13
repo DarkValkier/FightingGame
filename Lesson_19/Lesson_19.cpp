@@ -25,7 +25,7 @@ int main()
     arena2 += Character("Александр");
     arena2 += Character("Вадим");
 
-    arena += player1;
+    arena.add_character(player1);
     arena.add_character(player2);
     arena.add_character(player3);
     arena += arena2;

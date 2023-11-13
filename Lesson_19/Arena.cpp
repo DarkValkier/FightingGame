@@ -72,7 +72,7 @@ void Arena::sort_by_speed(bool inverted) {
 	}
 }
 
-Arena& Arena::operator+=(Character _character) {
+Arena& Arena::operator+=(Character* _character) {
 	add_character(_character);
 	return *this;
 }

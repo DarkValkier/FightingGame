@@ -20,7 +20,7 @@ public:
 	void fight();
 	unsigned int characters_alive();
 	void sort_by_speed(bool = false);
-	Arena& operator+=(Character);
+	Arena& operator+=(Character*);
 	Arena& operator+=(Arena&);
 };
 
