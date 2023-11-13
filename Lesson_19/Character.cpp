@@ -1,10 +1,13 @@
 #include "Character.h"
-#include <iostream>
-
-using namespace std;
 
 Character::Character() {}
-Character::Character(string _name):name(_name) {}
+Character::Character(
+	string _name,
+	int _health,
+	int _damage,
+	int _defence,
+	int _speed)
+	:name(_name), health(_health), damage(_damage), defence(_defence), speed(_speed) {}
 Character::Character(const Character& _source) {
 	name = _source.name;
 	health = _source.health;
@@ -66,6 +69,8 @@ void Character::print_stats() {
 	cout << " Защита: " << defence << endl;
 	cout << " Скорость: " << speed << endl;
 }
+
+
 
 int Character::take_damage(int _damage) {
 	health -= _damage;

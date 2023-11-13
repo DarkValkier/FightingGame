@@ -20,9 +20,15 @@ int main()
 
     Berserk* player3 = new Berserk("Анатолий");
 
-    arena.add_character(player1);
+    Arena arena2;
+    arena2 += Character("Евгений");
+    arena2 += Character("Александр");
+    arena2 += Character("Вадим");
+
+    arena += player1;
     arena.add_character(player2);
     arena.add_character(player3);
+    arena += arena2;
 
     cout << "Arena fighters:" << endl;
     arena.print_characters();

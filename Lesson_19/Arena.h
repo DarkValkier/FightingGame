@@ -19,6 +19,8 @@ public:
 	void add_character(Character*);
 	void fight();
 	unsigned int characters_alive();
-	void sort_by_speed();
+	void sort_by_speed(bool = false);
+	Arena& operator+=(Character);
+	Arena& operator+=(Arena&);
 };
 

@@ -59,7 +59,7 @@ unsigned int Arena::characters_alive() {
 	return result;
 }
 
-void Arena::sort_by_speed() {
+void Arena::sort_by_speed(bool inverted) {
 	bool changed = true;
 	while (changed)
 	{
@@ -70,4 +70,15 @@ void Arena::sort_by_speed() {
 				changed = true;
 			}
 	}
+}
+
+Arena& Arena::operator+=(Character _character) {
+	add_character(_character);
+	return *this;
+}
+
+Arena& Arena::operator+=(Arena& _source) {
+	for (int i = 0; i < _source.characters_count; i++)
+		add_character(_source.characters[i]);
+	return *this;
 }
