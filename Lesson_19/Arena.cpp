@@ -47,6 +47,8 @@ void Arena::fight() {
 			cout << " атаковал ";
 			cout << characters[player_to_attack]->get_name();
 			cout << " и нанёс " << player_damage << " урона" << endl;
+			cout << "У " << characters[player_to_attack]->get_name();
+			cout << " осталось " << characters[player_to_attack]->get_health() << " здоровья." << endl;
 		}
 		cout << endl;
 	}

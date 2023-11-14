@@ -21,9 +21,6 @@ int main()
     Berserk* player3 = new Berserk("Анатолий");
 
     Arena arena2;
-    arena2 += Character("Евгений");
-    arena2 += Character("Александр");
-    arena2 += Character("Вадим");
 
     arena.add_character(player1);
     arena.add_character(player2);
